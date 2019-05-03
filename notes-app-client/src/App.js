@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { Navbar, NavItem, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import "./App.css";
@@ -35,17 +35,16 @@ class App extends Component {
   userHasAuthenticated = authenticated => {
     this.setState({ isAuthenticated: authenticated });
   }
-  
+
   handleLogout = async event => {
     await Auth.signOut();
-  
     this.userHasAuthenticated(false);
+    this.props.history.push("/login");
   }
   
   
 
   render() {
-
     const childProps = {
       isAuthenticated: this.state.isAuthenticated,
       userHasAuthenticated: this.userHasAuthenticated
@@ -84,4 +83,5 @@ class App extends Component {
 }
 
 
-export default App;
+export default withRouter(App);
+
