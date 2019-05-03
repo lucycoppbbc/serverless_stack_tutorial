@@ -1,4 +1,5 @@
 export default {
+  MAX_ATTACHMENT_SIZE: 5000000,
     s3: {
       REGION: "eu-west-1",
       BUCKET: "lucy-26091996-notes-bucket"
@@ -12,6 +13,6 @@ export default {
       USER_POOL_ID: "eu-west-1_54Z7dmoz1",
       APP_CLIENT_ID: "5387ufjgbc9deloermmgbk3sfa",
       IDENTITY_POOL_ID: "eu-west-1:c67c5884-af2d-44bf-9a55-45e7e7c2bda4"
-    }
+    },
   };
   
